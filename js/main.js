@@ -28,6 +28,7 @@ function changeColour() {
     document.body.style.backgroundColor = hex;
   });
 }
+
 function showMessage() {
   console.log("message will be displayed");
   let p = new Promise(function (resolve, reject) {
@@ -36,6 +37,8 @@ function showMessage() {
     }, 1500);
   });
   p.then(function (msg) {
-    console.log(msg);
+    let para = document.createElement("p");
+    para.textContent = msg;
+    document.querySelector("main").append(para);
   });
 }
