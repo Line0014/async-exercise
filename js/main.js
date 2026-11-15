@@ -19,14 +19,15 @@ function changeColour() {
   console.log("colour will change");
   let p = new Promise(function (resolve, reject) {
     setTimeout(function () {
-      resolve("#79e4bb");
+      let hex = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      resolve(hex);
     }, 1500);
   });
   p.then(function (hex) {
     console.log(hex);
+    document.body.style.backgroundColor = hex;
   });
 }
-
 function showMessage() {
   console.log("message will be displayed");
   let p = new Promise(function (resolve, reject) {
