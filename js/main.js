@@ -5,6 +5,7 @@ function init() {
 }
 
 function pickFunction() {
+  console.log("<body> clicked. Picking a function");
   let num = Math.random();
   let picked = Math.round(num);
 
@@ -31,9 +32,15 @@ function changeColour() {
 
 function showMessage() {
   console.log("message will be displayed");
+  let names = ["Brittany", "Kateryna", "Camilo", "Steve"];
   let p = new Promise(function (resolve, reject) {
     setTimeout(function () {
-      resolve("Hey there, thanks for waiting!");
+      let index = Math.floor(Math.random() * names.length);
+      resolve(
+        "Hey " +
+          names[index] +
+          ", thanks for waiting through all those milliseconds.",
+      );
     }, 1500);
   });
   p.then(function (msg) {
